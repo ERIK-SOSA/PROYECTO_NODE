@@ -10,7 +10,7 @@ function luhnApi(app) {
               isValid: isValidNumberCreditCard()
           });
         } catch (error) {
-            next(error);
+            next(err);
         }
     });
 
@@ -77,7 +77,6 @@ function luhnApi(app) {
         let plus = 0;
         for (let i=0; i<value.length; i++) {
             plus = plus + parseInt(value[i].toString(),10);
-            console.log('plus ☺☻♥', plus)
         }
         return plus;
     }
